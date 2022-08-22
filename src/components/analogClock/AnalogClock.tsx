@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {ClockArrow} from "./ClockArrow";
 
 export const AnalogClock: React.FC = () => {
     const [dateTime, setDateTime] = useState<Date>(new Date())
@@ -21,22 +22,27 @@ export const AnalogClock: React.FC = () => {
             border: 'solid 1px aqua',
             borderRadius: '50%',
         }}>
-            <div style={{
-                position: 'absolute',
-                backgroundColor: 'lightgreen',
-                width: 5,
-                height: 100,
-                transformOrigin: 'bottom',
-                transform: `translateX(100px) rotate(${seconds * 6}deg)`,
-            }}></div>
-            <div style={{
-                position: 'absolute',
-                backgroundColor: 'red',
-                width: 5,
-                height: 70,
-                transformOrigin: 'bottom',
-                transform: `translate(100px, 30px) rotate(${hours * 30}deg)`,
-            }}></div>
+            <ClockArrow
+                clockWidth={100}
+                color={'red'}
+                width={20}
+                length={70}
+                angleDeg={hours * 15}
+            />
+            <ClockArrow
+                clockWidth={100}
+                color={'blue'}
+                width={3}
+                length={90}
+                angleDeg={minutes * 6}
+            />
+            <ClockArrow
+                clockWidth={100}
+                color={'lightgreen'}
+                width={2}
+                length={100}
+                angleDeg={seconds * 6}
+            />
         </div>
     )
 }
