@@ -4,7 +4,7 @@
     width: 100%;
     display: grid;
     grid-template-areas: "navbar content";
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 200px 1fr;
 }
 
 .app .wrapperContent {
@@ -16,5 +16,5 @@
 .app .navbar {
     grid-area: navbar;
     background-color: orange;
-    padding: 5px;
+    padding-top: 10px;
 }
