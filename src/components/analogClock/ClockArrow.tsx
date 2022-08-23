@@ -4,7 +4,7 @@ type ClockArrowPropsType = {
     width: number
     length: number
     angleDeg: number
-    clockWidth: number
+    clockRadius: number
     color: string
 }
 export const ClockArrow: React.FC<ClockArrowPropsType> = (props) =>
@@ -16,7 +16,7 @@ export const ClockArrow: React.FC<ClockArrowPropsType> = (props) =>
         width: props.width,
         height: props.length,
         transformOrigin: 'bottom',
-        transform: `translate(${props.clockWidth - props.width / 2}px, ${props.clockWidth - props.length}px)
+        transform: `translate(${props.clockRadius - props.width / 2}px, ${props.clockRadius - props.length}px)
                     rotate(${props.angleDeg}deg)`,
         // transition: "transform  0.8s"
     }}></div>

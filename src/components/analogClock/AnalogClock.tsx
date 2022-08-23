@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {ClockArrow} from "./ClockArrow";
 
-export const AnalogClock: React.FC = () => {
+type AnalogClockPropsType = {
+    size?: number
+}
+
+export const AnalogClock: React.FC<AnalogClockPropsType> = (props) => {
     const [dateTime, setDateTime] = useState<Date>(new Date())
     
     useEffect(() => {
@@ -9,38 +13,42 @@ export const AnalogClock: React.FC = () => {
         return () => clearInterval(timerId)
     }, [])
     
+    const size = props.size ?? 200
+    const radius = size / 2
+    
     const seconds = dateTime.getSeconds()
     const minutes = dateTime.getMinutes()
     const hours = dateTime.getHours()
-    console.log(hours + ':' + minutes + ':' + seconds)
+    // console.log(hours + ':' + minutes + ':' + seconds)
     
     return (
         <div style={{
             position: 'relative',
-            width: 200,
-            height: 200,
-            border: 'solid 1px aqua',
+            width: size,
+            height: size,
             borderRadius: '50%',
+            backgroundColor: '#ffa600',
+            boxShadow: 'inset 0px 0px 5px 2px #7cfc00',
         }}>
             <ClockArrow
-                clockWidth={100}
+                clockRadius={radius}
                 color={'red'}
                 width={6}
-                length={70}
+                length={radius * 0.7}
                 angleDeg={hours * 15}
             />
             <ClockArrow
-                clockWidth={100}
+                clockRadius={radius}
                 color={'blue'}
                 width={5}
-                length={90}
+                length={radius * 0.9}
                 angleDeg={minutes * 6}
             />
             <ClockArrow
-                clockWidth={100}
+                clockRadius={size / 2}
                 color={'lightgreen'}
                 width={2}
-                length={100}
+                length={radius}
                 angleDeg={seconds * 6}
             />
             <div style={{
@@ -51,8 +59,7 @@ export const AnalogClock: React.FC = () => {
                 width: 10,
                 height: 10,
                 transformOrigin: 'bottom',
-                transform: `translate(94px, 95px)`,
-                transition: "transform  0.5s"
+                transform: `translate(${radius - 5}px, ${radius - 5}px)`,
             }}></div>
         </div>
     )
