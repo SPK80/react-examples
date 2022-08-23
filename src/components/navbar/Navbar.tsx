@@ -7,9 +7,8 @@ export const Navbar: React.FC = () => {
         navData.isActive ? s.active : s.nav
     return (
         <div className={s.navbar}>
-            <NavLink className={navClassNameGetter} to={'analog-clock'}>
-                Analog Clock
-            </NavLink>
+            <NavLink className={navClassNameGetter} to={'analog-clock'}> Analog Clock </NavLink>
+            <NavLink className={navClassNameGetter} to={'accordion-sample'}> Accordion </NavLink>
         </div>
     )
 }

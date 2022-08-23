@@ -3,6 +3,7 @@ import {AnalogClock} from "./components/analogClock/AnalogClock";
 import {Route, Routes} from "react-router-dom";
 import {Navbar} from "./components/navbar/Navbar";
 import s from './App.module.css';
+import {AccordionSample} from "./components/accordion/AccordionSample";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <div className={s.wrapperContent}>
                 <Routes>
                     <Route path={'analog-clock'} element={<AnalogClock/>}/>
+                    <Route path={'accordion-sample'} element={<AccordionSample/>}/>
                 </Routes>
             </div>
         
