@@ -43,6 +43,17 @@ export const AnalogClock: React.FC = () => {
                 length={100}
                 angleDeg={seconds * 6}
             />
+            <div style={{
+                position: 'absolute',
+                backgroundColor: 'yellow',
+                boxShadow: '1px 1px 3px 0 rgba(0,0,0,0.5)',
+                borderRadius: '50%',
+                width: 10,
+                height: 10,
+                transformOrigin: 'bottom',
+                transform: `translate(94px, 95px)`,
+                transition: "transform  0.5s"
+            }}></div>
         </div>
     )
 }
