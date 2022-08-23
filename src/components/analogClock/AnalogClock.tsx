@@ -25,14 +25,14 @@ export const AnalogClock: React.FC = () => {
             <ClockArrow
                 clockWidth={100}
                 color={'red'}
-                width={20}
+                width={6}
                 length={70}
                 angleDeg={hours * 15}
             />
             <ClockArrow
                 clockWidth={100}
                 color={'blue'}
-                width={3}
+                width={5}
                 length={90}
                 angleDeg={minutes * 6}
             />
